@@ -3,8 +3,11 @@
   "$id": "https://wordlines.dev/schemas/wordline.schema.json",
   "title": "Wordline",
   "type": "object",
-  "required": ["id", "title", "intent", "created_at", "updated_at", "status", "events", "checkpoints"],
+  "required": ["version", "id", "title", "intent", "created_at", "updated_at", "status", "events", "checkpoints"],
   "properties": {
+    "version": {
+      "type": "string"
+    },
     "id": {
       "type": "string"
     },
@@ -66,6 +69,18 @@
         },
         "url": {
           "type": "string"
+        },
+        "source_path": {
+          "type": "string"
+        },
+        "stored_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "size_bytes": {
+          "type": "number"
         }
       },
       "additionalProperties": true
@@ -86,10 +101,12 @@
         },
         "summary": {
           "type": "string"
+        },
+        "event_count": {
+          "type": "number"
         }
       },
       "additionalProperties": true
     }
   }
 }
-

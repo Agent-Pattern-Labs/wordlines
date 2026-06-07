@@ -54,14 +54,39 @@ A wordline is a local task capsule with:
 
 ## MVP shape
 
-The first useful version should be small:
+The current MVP is a local CLI:
 
-1. Start a wordline with a name and intent.
-2. Capture selected browser tabs, files, screenshots, notes, and links.
-3. Append timestamped decisions and open questions.
-4. Save checkpoints.
-5. Export the wordline as a folder or zip.
-6. Resume from a checkpoint with the right context in front of you.
+```bash
+npm install
+npm run build
+node dist/cli.js init "Appeal medical bill" --intent "Contest a surprise invoice"
+node dist/cli.js add-link https://example.com/billing-policy --title "Billing policy"
+node dist/cli.js add-note "Called support. Appeals take 10 business days."
+node dist/cli.js add-file ./invoice.pdf --title "Original invoice"
+node dist/cli.js checkpoint "Ready to draft appeal" --summary "Evidence collected."
+node dist/cli.js summary
+```
+
+After building locally, you can also link the command:
+
+```bash
+npm link
+wordlines --help
+```
+
+## CLI commands
+
+- `wordlines init <title> --intent <intent> [--path <folder>]`
+- `wordlines add-note <text> [--title <title>] [--wordline <folder>]`
+- `wordlines add-link <url> [--title <title>] [--wordline <folder>]`
+- `wordlines add-file <path> [--title <title>] [--reference] [--wordline <folder>]`
+- `wordlines add-screenshot <path> [--title <title>] [--reference] [--wordline <folder>]`
+- `wordlines checkpoint <title> [--summary <text>] [--wordline <folder>]`
+- `wordlines summary [--wordline <folder>]`
+- `wordlines status [--wordline <folder>]`
+- `wordlines export --out <folder> [--wordline <folder>]`
+
+See [docs/CLI.md](docs/CLI.md) for details.
 
 ## Non-goals
 
@@ -73,5 +98,4 @@ The first useful version should be small:
 
 ## Repository status
 
-This repository is currently a concept/spec seed. The next step is to define the file format, local capture model, and smallest usable desktop/browser prototype.
-
+This repository now has a working CLI MVP. The next major step is browser capture for selected tabs and sources.

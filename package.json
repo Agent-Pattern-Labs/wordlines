@@ -1,0 +1,40 @@
+{
+  "name": "wordlines",
+  "version": "0.1.0",
+  "description": "Purpose-scoped timelines for human and AI work.",
+  "type": "module",
+  "bin": {
+    "wordlines": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build",
+    "smoke": "npm run build && node dist/cli.js --help",
+    "test": "npm run build && node scripts/smoke-test.mjs"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "schemas",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ai-agents",
+    "local-first",
+    "timeline",
+    "productivity",
+    "workflow",
+    "cli"
+  ],
+  "author": "Charlie Greenman",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

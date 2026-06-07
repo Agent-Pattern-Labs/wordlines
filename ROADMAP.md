@@ -9,13 +9,19 @@
 
 ## Phase 1: Local CLI
 
-- `wordlines init`
-- `wordlines add-note`
-- `wordlines add-link`
-- `wordlines add-file`
-- `wordlines checkpoint`
-- `wordlines export`
-- `wordlines summary`
+- [x] `wordlines init`
+- [x] `wordlines add-note`
+- [x] `wordlines add-link`
+- [x] `wordlines add-file`
+- [x] `wordlines add-screenshot`
+- [x] `wordlines checkpoint`
+- [x] `wordlines export`
+- [x] `wordlines summary`
+- [x] `wordlines status`
+- [ ] `wordlines fork`
+- [ ] `wordlines pause`
+- [ ] `wordlines complete`
+- [ ] `wordlines handoff`
 
 ## Phase 2: Browser Capture
 
@@ -44,4 +50,3 @@
 - Compare forks
 - Archive completed wordlines
 - Mark source evidence and final outcomes
-

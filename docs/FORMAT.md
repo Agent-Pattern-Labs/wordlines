@@ -20,6 +20,7 @@ my-task.wordline/
 
 Minimum fields:
 
+- `version`
 - `id`
 - `title`
 - `intent`
@@ -50,4 +51,3 @@ Initial event types:
 - Events should reference local artifacts by relative path.
 - Sensitive data should be explicit and removable.
 - Agent traces should be optional, not required.
-

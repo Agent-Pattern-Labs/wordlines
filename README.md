@@ -88,6 +88,20 @@ wordlines --help
 
 See [docs/CLI.md](docs/CLI.md) for details.
 
+## Publishing
+
+Publishing is handled by GitHub Actions in `.github/workflows/npm-publish.yml`.
+
+To publish from GitHub:
+
+1. Add an npm automation token as the repository secret `NPM_TOKEN`.
+2. Bump `version` in `package.json`.
+3. Create and publish a GitHub release.
+
+The workflow runs `npm ci`, `npm test`, and then `npm publish --access public --provenance`.
+
+You can also run the workflow manually with `dry_run` enabled to verify the package without publishing.
+
 ## Non-goals
 
 - Not a 24/7 surveillance system

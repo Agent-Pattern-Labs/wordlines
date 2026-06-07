@@ -3,8 +3,16 @@
   "version": "0.1.0",
   "description": "Purpose-scoped timelines for human and AI work.",
   "type": "module",
+  "main": "./dist/wordline.js",
+  "types": "./dist/wordline.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/wordline.d.ts",
+      "import": "./dist/wordline.js"
+    }
+  },
   "bin": {
-    "wordlines": "./dist/cli.js"
+    "wordlines": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -30,6 +38,17 @@
   ],
   "author": "Charlie Greenman",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agent-Pattern-Labs/wordlines.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Agent-Pattern-Labs/wordlines/issues"
+  },
+  "homepage": "https://github.com/Agent-Pattern-Labs/wordlines#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/node": "^22.10.2",
     "typescript": "^5.7.2"

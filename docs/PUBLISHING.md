@@ -7,10 +7,28 @@ The npm package is published by GitHub Actions.
 The package is published as:
 
 ```text
-wordlines
+@agent-pattern-labs/wordlines
 ```
 
-## Required Secret
+## Authentication
+
+Use one of these options.
+
+### Option A: Trusted Publishing
+
+Configure npm Trusted Publishing for:
+
+```text
+Package: @agent-pattern-labs/wordlines
+GitHub organization: Agent-Pattern-Labs
+GitHub repository: wordlines
+Workflow filename: npm-publish.yml
+Allowed action: npm publish
+```
+
+This uses GitHub Actions OIDC and does not require a long-lived publish token.
+
+### Option B: npm Token
 
 Add this repository secret in GitHub:
 
@@ -18,7 +36,7 @@ Add this repository secret in GitHub:
 NPM_TOKEN
 ```
 
-Use an npm automation token with permission to publish `wordlines`.
+Use an npm automation token with permission to publish `@agent-pattern-labs/wordlines`.
 
 ## Release Flow
 
@@ -32,10 +50,10 @@ The workflow:
 1. Checks out the repo.
 2. Installs dependencies with `npm ci`.
 3. Runs `npm test`.
-4. Publishes with provenance:
+4. Publishes with either `NPM_TOKEN` or Trusted Publishing:
 
 ```bash
-npm publish --access public --provenance
+npm publish --access public
 ```
 
 ## Manual Dry Run
@@ -49,4 +67,3 @@ npm publish --dry-run --access public
 ## Manual Publish
 
 You can also manually run the workflow with `dry_run` disabled. This publishes the current branch state, so release-based publishing is preferred for normal package releases.
-

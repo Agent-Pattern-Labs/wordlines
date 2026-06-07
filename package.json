@@ -1,5 +1,5 @@
 {
-  "name": "wordlines",
+  "name": "@agent-pattern-labs/wordlines",
   "version": "0.1.0",
   "description": "Purpose-scoped timelines for human and AI work.",
   "type": "module",

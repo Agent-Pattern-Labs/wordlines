@@ -74,6 +74,12 @@ npm link
 wordlines --help
 ```
 
+Once published, install the CLI with:
+
+```bash
+npm install -g @agent-pattern-labs/wordlines
+```
+
 ## CLI commands
 
 - `wordlines init <title> --intent <intent> [--path <folder>]`
@@ -94,11 +100,11 @@ Publishing is handled by GitHub Actions in `.github/workflows/npm-publish.yml`.
 
 To publish from GitHub:
 
-1. Add an npm automation token as the repository secret `NPM_TOKEN`.
+1. Configure npm Trusted Publishing for `@agent-pattern-labs/wordlines`, or add an npm automation token as the repository secret `NPM_TOKEN`.
 2. Bump `version` in `package.json`.
 3. Create and publish a GitHub release.
 
-The workflow runs `npm ci`, `npm test`, and then `npm publish --access public --provenance`.
+The workflow runs `npm ci`, `npm test`, and then publishes the scoped public package.
 
 You can also run the workflow manually with `dry_run` enabled to verify the package without publishing.
 
